@@ -1,0 +1,8 @@
+Model Information:
+* title:	Ski-Fi Drone [Free]
+* source:	https://sketchfab.com/3d-models/ski-fi-drone-free-e2dda5af0b9b4db5a5c17e4648c683e8
+* author:	Denis Trepakov (https://sketchfab.com/CozyDino)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
