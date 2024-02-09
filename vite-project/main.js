@@ -11,6 +11,7 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
+  antialias: true
 });
 
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -23,7 +24,7 @@ renderer.render(scene, camera);
 // Sphere
 
 const geometry = new THREE.SphereGeometry( 11, 22, 15 ); 
-const earthtexture = new THREE.TextureLoader().load('earth1.jpeg');
+const earthtexture = new THREE.TextureLoader().load('assets/earth1.jpeg');
 const material1 = new THREE.MeshBasicMaterial( { map: earthtexture } );
 const torus = new THREE.Mesh(geometry, material1);
 
@@ -67,12 +68,12 @@ Array(200).fill().forEach(addStar);
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load('black.jpg');
+const spaceTexture = new THREE.TextureLoader().load('assets/black.jpg');
 scene.background = spaceTexture;
 
 // Avatar
 
-const jeffTexture = new THREE.TextureLoader().load('Me1.jpg');
+const jeffTexture = new THREE.TextureLoader().load('assets/Me1.jpg');
 
 const jeff = new THREE.Mesh(new THREE. BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: jeffTexture }));
 
@@ -80,7 +81,7 @@ scene.add(jeff);
 
 // Moon
 
-const moonTexture = new THREE.TextureLoader().load('moon.jpg');
+const moonTexture = new THREE.TextureLoader().load('assets/moon.jpg');
 const normalTexture = new THREE.TextureLoader().load('normal.jpg');
 
 
@@ -103,7 +104,28 @@ moon.position.setX(-10);
 jeff.position.z = -5;
 jeff.position.x = 2;
 
+
+// Resizing handler for windows size
+
+function onWindowResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+// Event listener for window resize
+window.addEventListener('resize', onWindowResize);
+
+
+
+
+
+
+
+
+
 // Scroll Animation
+
 
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
@@ -142,3 +164,8 @@ function animate() {
 }
 
 animate();
+
+
+
+
+
