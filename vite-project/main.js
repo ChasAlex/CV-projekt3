@@ -23,9 +23,9 @@ renderer.render(scene, camera);
 
 // Sphere
 
-const geometry = new THREE.SphereGeometry( 11, 22, 15 ); 
+const geometry = new THREE.SphereGeometry(11, 22, 15);
 const earthtexture = new THREE.TextureLoader().load('assets/earth1.jpeg');
-const material1 = new THREE.MeshBasicMaterial( { map: earthtexture } );
+const material1 = new THREE.MeshBasicMaterial({ map: earthtexture });
 const torus = new THREE.Mesh(geometry, material1);
 
 
@@ -75,7 +75,7 @@ scene.background = spaceTexture;
 
 const jeffTexture = new THREE.TextureLoader().load('assets/Me1.jpg');
 
-const jeff = new THREE.Mesh(new THREE. BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: jeffTexture }));
+const jeff = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: jeffTexture }));
 
 scene.add(jeff);
 
@@ -107,6 +107,10 @@ jeff.position.x = 2;
 
 // Resizing handler for windows size
 
+
+
+
+
 function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
@@ -115,13 +119,6 @@ function onWindowResize() {
 
 // Event listener for window resize
 window.addEventListener('resize', onWindowResize);
-
-
-
-
-
-
-
 
 
 // Scroll Animation
@@ -148,16 +145,16 @@ moveCamera();
 
 function animate() {
   requestAnimationFrame(animate);
-  torus.rotation.x += 0.002;
-  torus.rotation.y += 0.003;
- 
+  torus.rotation.x += 0.001;
+  torus.rotation.y += 0.002;
+
   moon.rotation.x += 0.005;
-  
+
   jeff.rotation.y += 0.003;
   jeff.rotation.z += 0.002;
-  
- 
 
+
+  
   // controls.update();
 
   renderer.render(scene, camera);

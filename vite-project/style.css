@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+
 canvas {
   position: fixed;
   top: 0;
@@ -30,7 +32,7 @@ h1,
 h2,
 h3,
 blockquote {
-  font-family: elevon, sans-serif;
+  font-family: 'Source Code Pro', monospace;
   font-weight: 500;
   font-style: normal;
 }
@@ -42,12 +44,12 @@ canvas {
 }
 
 header {
- 
   grid-column: 2 / span 8;
   font-size: 2.5rem;
   padding: 2rem;
   width: fit-content;
   margin-bottom: var(--spacing);
+  font-family: 'Source Code Pro', monospace;
 }
 
 section {
@@ -57,8 +59,7 @@ section {
   font-size: 1.25rem;
   line-height: 1.5;
   margin-bottom: var(--spacing);
- 
-  
+  font-family: 'Source Code Pro', monospace;
 }
 
 blockquote {
@@ -76,11 +77,11 @@ blockquote p {
   line-height: 1;
 }
 
-
-.left{
-  grid-column: 6 / 12; 
+.left {
+  grid-column: 6 / 12;
 }
-.right{
+
+.right {
   grid-column: 8 / 12;
   justify-content: center;
 }
@@ -112,73 +113,39 @@ blockquote p {
 .image-item:hover {
   transform: scale(1.1);
 }
-nav {
-  background: linear-gradient(to right, #6a11cb, #2575fc);
-  padding: 1rem;
+
+/* Media Queries for Mobile Devices */
+@media only screen and (max-width: 600px) {
+  main {
+    padding: 120px 0px;
+  }
+
+  header {
+    font-size: 2rem;
+  }
+
+  section {
+    grid-column: 1 / -1;
+    padding: 0.5rem;
+    margin-bottom: 200px;
+  }
+
+  blockquote {
+    grid-column: 1 / -1;
+  }
+
+  blockquote p {
+    font-size: 2rem;
+  }
+
+  .left,
+  .right {
+    grid-column: 1 / -1;
+  }
+
+  .image-row-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 8px;
+    padding: 8px;
+  }
 }
-
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-link {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  position: relative;
-  transition: color 0.3s ease-in-out;
-}
-
-.nav-link:hover {
-  color: #ffcc00;
-}
-
-.social-icons {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.social-icon {
-  margin: 0 8px;
-  color: #fff;
-  font-size: 1.5rem;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-
-.social-icon:hover {
-  color: #ffcc00;
-}
-
-
-
-
-
-
-
-
-
-
-
-
