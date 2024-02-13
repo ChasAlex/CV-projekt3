@@ -20,19 +20,8 @@ camera.position.setX(-3);
 
 renderer.render(scene, camera);
 
-// Sphere
-
-const geometry = new THREE.SphereGeometry( 11, 22, 15 ); 
-const earthtexture = new THREE.TextureLoader().load('assets/earth1.jpeg');
-const material1 = new THREE.MeshBasicMaterial( { map: earthtexture } );
-const torus = new THREE.Mesh(geometry, material1);
 
 
-
-
-
-
-scene.add(torus);
 
 // Lights
 
@@ -72,51 +61,56 @@ scene.background = spaceTexture;
 
 // Avatar
 
-const jeffTexture = new THREE.TextureLoader().load('assets/Me1.jpg');
+const project1Texture = new THREE.TextureLoader().load('assets/Me1.jpg');
 
-const jeff = new THREE.Mesh(new THREE. BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: jeffTexture }));
+const project1 = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: project1Texture }));
 
-scene.add(jeff);
-
-// Moon
-
-const moonTexture = new THREE.TextureLoader().load('assets/moon.jpg');
-const normalTexture = new THREE.TextureLoader().load('normal.jpg');
+scene.add(project1);
 
 
+const project2Texture = new THREE.TextureLoader().load('assets/Me1.jpg');
+const project2 = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: project2Texture }));
+scene.add(project2);
 
 
-const moon = new THREE.Mesh(
-  new THREE.SphereGeometry(3, 32, 32),
-  new THREE.MeshStandardMaterial({
-    map: moonTexture,
-    normalMap: normalTexture,
-  })
-);
-
-scene.add(moon);
-
-moon.position.z = 30;
-moon.position.setX(-10);
+const project3Texture = new THREE.TextureLoader().load('assets/Me1.jpg');
+const project3 = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: project3Texture }));
+scene.add(project3);
 
 
-jeff.position.z = -5;
-jeff.position.x = 2;
+
+
+
+//positioning the projects
+
+project3.position.z = 15;
+project3.position.x = 2;
+project3.position.y = 0;
+
+
+project2.position.z = 5;
+project2.position.x = 2;
+project2.position.y = 0;
+
+project1.position.z = -5;
+project1.position.x = 2;
+project1.position.y = 0;
 
 // Scroll Animation
 
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
-  moon.rotation.x += 0.05;
-  moon.rotation.y += 0.075;
-  moon.rotation.z += 0.05;
 
-  jeff.rotation.y += 0.01;
-  jeff.rotation.z += 0.01;
+  project1.rotation.y += 0.01;
+  project1.rotation.z += 0.01;
+  project2.rotation.y += 0.01;
+  project2.rotation.z += 0.01;
+  project3.rotation.y += 0.01;
+  project3.rotation.z += 0.01;
 
   camera.position.z = t * -0.01;
-  camera.position.x = t * -0.0002;
-  camera.rotation.y = t * -0.0002;
+  camera.position.x = t * -0.0000;
+  camera.rotation.y = t * -0.0000;
 }
 
 document.body.onscroll = moveCamera;
@@ -126,15 +120,14 @@ moveCamera();
 
 function animate() {
   requestAnimationFrame(animate);
-  torus.rotation.x += 0.002;
-  torus.rotation.y += 0.003;
  
-  moon.rotation.x += 0.005;
-  
-  jeff.rotation.y += 0.003;
-  jeff.rotation.z += 0.002;
-  
- 
+
+  project1.rotation.y += 0.003;
+  project1.rotation.z += 0.002;
+  project2.rotation.y += 0.003;
+  project2.rotation.z += 0.002;
+  project3.rotation.y += 0.003;
+  project3.rotation.z += 0.002;
 
   // controls.update();
 
@@ -142,8 +135,4 @@ function animate() {
 }
 
 animate();
-
-
-
-
 
