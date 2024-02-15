@@ -24,7 +24,7 @@ renderer.render(scene, camera);
 // Sphere
 
 const geometry = new THREE.SphereGeometry(11, 22, 15);
-const earthtexture = new THREE.TextureLoader().load('./public/earth1.jpeg');
+const earthtexture = new THREE.TextureLoader().load('/earth1.jpeg');
 const material1 = new THREE.MeshBasicMaterial({ map: earthtexture });
 const torus = new THREE.Mesh(geometry, material1);
 
@@ -68,12 +68,12 @@ Array(200).fill().forEach(addStar);
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load('./public/black.jpg');
+const spaceTexture = new THREE.TextureLoader().load('/black.jpg');
 scene.background = spaceTexture;
 
 // Avatar
 
-const jeffTexture = new THREE.TextureLoader().load('./public/Me1.JPG');
+const jeffTexture = new THREE.TextureLoader().load('/Me1.JPG');
 
 const jeff = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: jeffTexture }));
 
@@ -81,7 +81,7 @@ scene.add(jeff);
 
 // Moon
 
-const moonTexture = new THREE.TextureLoader().load('./public/Moon.jpg');
+const moonTexture = new THREE.TextureLoader().load('/Moon.jpg');
 const normalTexture = new THREE.TextureLoader().load('normal.jpg');
 
 

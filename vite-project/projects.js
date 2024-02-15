@@ -56,24 +56,24 @@ Array(200).fill().forEach(addStar);
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load('./public/black.jpg');
+const spaceTexture = new THREE.TextureLoader().load('/black.jpg');
 scene.background = spaceTexture;
 
 // Avatar
 
-const project1Texture = new THREE.TextureLoader().load('./public/Me1.jpg');
+const project1Texture = new THREE.TextureLoader().load('/Me1.jpg');
 
 const project1 = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: project1Texture }));
 
 scene.add(project1);
 
 
-const project2Texture = new THREE.TextureLoader().load('./public/Me1.jpg');
+const project2Texture = new THREE.TextureLoader().load('/Me1.jpg');
 const project2 = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: project2Texture }));
 scene.add(project2);
 
 
-const project3Texture = new THREE.TextureLoader().load('./public/Me1.jpg');
+const project3Texture = new THREE.TextureLoader().load('/Me1.jpg');
 const project3 = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: project3Texture }));
 scene.add(project3);
 
