@@ -61,21 +61,29 @@ scene.background = spaceTexture;
 
 // Avatar
 
-const project1Texture = new THREE.TextureLoader().load('/Me1.jpg');
+const project1Texture = new THREE.TextureLoader().load('/project1_music.jpg');
 
 const project1 = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: project1Texture }));
 
 scene.add(project1);
 
 
-const project2Texture = new THREE.TextureLoader().load('/Me1.jpg');
+const project2Texture = new THREE.TextureLoader().load('/Ski3.JPG');
 const project2 = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: project2Texture }));
 scene.add(project2);
 
 
-const project3Texture = new THREE.TextureLoader().load('/Me1.jpg');
+const project3Texture = new THREE.TextureLoader().load('/project3_pizza.jpg');
 const project3 = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: project3Texture }));
 scene.add(project3);
+
+const project4Texture = new THREE.TextureLoader().load('/project4_personal.jpg');
+const project4 = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: project4Texture }));
+scene.add(project4);
+
+//const project5Texture = new THREE.TextureLoader().load('public/Me1.jpg');
+//const project5 = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: project5Texture }));
+//scene.add(project5); 
 
 
 
@@ -83,16 +91,28 @@ scene.add(project3);
 
 //positioning the projects
 
-project3.position.z = 15;
+//project5.position.z = 30;
+//project5.position.x = 2;
+//project5.position.y = 0;
+
+
+
+project4.position.z = 28;
+project4.position.x = 2;
+project4.position.y = 0;
+
+
+
+project3.position.z = 19;
 project3.position.x = 2;
 project3.position.y = 0;
 
 
-project2.position.z = 5;
+project2.position.z = 10;
 project2.position.x = 2;
 project2.position.y = 0;
 
-project1.position.z = -5;
+project1.position.z = 3;
 project1.position.x = 2;
 project1.position.y = 0;
 
@@ -107,6 +127,10 @@ function moveCamera() {
   project2.rotation.z += 0.01;
   project3.rotation.y += 0.01;
   project3.rotation.z += 0.01;
+  project4.rotation.y += 0.01;
+  project4.rotation.z += 0.01;
+  //project5.rotation.y += 0.01;
+  //project5.rotation.z += 0.01;
 
   camera.position.z = t * -0.01;
   camera.position.x = t * -0.0000;
@@ -128,6 +152,10 @@ function animate() {
   project2.rotation.z += 0.002;
   project3.rotation.y += 0.003;
   project3.rotation.z += 0.002;
+  project4.rotation.y += 0.003;
+  project4.rotation.z += 0.002;
+  //project5.rotation.y += 0.003;
+  //project5.rotation.z += 0.002;
 
   // controls.update();
 
